@@ -1,25 +1,54 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import Data from './Data'
+import Contador from './contador'
 import './App.css';
+class App extends Component {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  state = {
+    death: null,
+    confirmed: null,
+    recovered: null,
+    last_update: null,
+    countries: null,
+    loadding: true
+  };
+
+  async componentDidMount() {
+    try {
+      const response = await fetch('https://enrichman.github.io/covid19/world/full.json');
+      const data = await response.json();
+      this.setState({
+        death: data.deaths,
+        confirmed: data.confirmed,
+        recovered: data.recovered,
+        last_update: data.last_update,
+        countries: data.countries,
+        loadding: false
+      });
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  componentWillUnmount() {
+    console.log('Will unMount');
+  }
+
+  render(){
+    if(this.state.loadding) {
+      return (
+        <div> Cargando los datos actualizados</div>
+      )
+    } else {
+      return (
+        <>
+          <Contador />
+          <Data death= {this.state.death} confirmed={this.state.confirmed} recovered={this.state.recovered} last_update={this.state.last_update} />
+        </>
+      )
+    }
+  }
 }
 
 export default App;
