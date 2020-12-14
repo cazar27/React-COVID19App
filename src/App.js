@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Data from './Data'
-import Contador from './contador'
 import './App.css';
 class App extends Component {
 
@@ -43,7 +42,6 @@ class App extends Component {
     } else {
       return (
         <>
-          <Contador />
           <Data death= {this.state.death} confirmed={this.state.confirmed} recovered={this.state.recovered} last_update={this.state.last_update} />
         </>
       )
