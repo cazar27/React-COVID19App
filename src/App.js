@@ -1,52 +1,55 @@
-import React, {Component} from 'react';
-import Data from './Data'
+import React, {useState, useEffect} from 'react';
+import DataList from './DataList';
+//imports from material-ui
+import Container from '@material-ui/core/Container';
+import Link from '@material-ui/core/Link';
 import './App.css';
-class App extends Component {
 
-  state = {
-    death: null,
-    confirmed: null,
-    recovered: null,
-    last_update: null,
-    countries: null,
-    loadding: true
-  };
+const App = ({}) => {
 
-  async componentDidMount() {
-    try {
-      const response = await fetch('https://enrichman.github.io/covid19/world/full.json');
-      const data = await response.json();
-      this.setState({
-        death: data.deaths,
-        confirmed: data.confirmed,
-        recovered: data.recovered,
-        last_update: data.last_update,
-        countries: data.countries,
-        loadding: false
-      });
-      console.log(data);
-    } catch (e) {
-      console.log(e);
+  const [loadding ,setLoading ] = useState(true);
+  const [death ,setDeath ] = useState(null);
+  const [confirmed ,setConfirmed ] = useState(null);
+  const [recovered ,setRecovered ] = useState(null);
+  const [last_update ,setLast_update ] = useState(null);
+  //const [countries ,setCountries ] = useState(null);
+
+  useEffect( () => {
+    async function fetchData() {
+      try {
+        const response = await fetch('https://enrichman.github.io/covid19/world/full.json');
+        const data = await response.json();
+        setLoading(false);
+        
+          setDeath(data.deaths);
+          setConfirmed(data.confirmed);
+          setRecovered(data.recovered);
+          setLast_update(data.last_update);
+          //setCountries(data.countries);
+        console.log(data);
+      } catch (e) {
+        console.log(e);
+      }
     }
-  }
+    fetchData();
+  }, []);
 
-  componentWillUnmount() {
-    console.log('Will unMount');
+  if(loadding) {
+    return (
+      <div> Cargando los datos actualizados</div>
+    )
+  } else {
+    return (
+      <Container maxWidth="sm">
+          <DataList
+            death= {death}
+            confirmed={confirmed}
+            recovered={recovered}
+            last_update={last_update}
+          />
+      </Container>
+    )
   }
-
-  render(){
-    if(this.state.loadding) {
-      return (
-        <div> Cargando los datos actualizados</div>
-      )
-    } else {
-      return (
-        <>
-          <Data death= {this.state.death} confirmed={this.state.confirmed} recovered={this.state.recovered} last_update={this.state.last_update} />
-        </>
-      )
-    }
-  }
-}
+};
 
 export default App;
