@@ -1,25 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
 import {home, spain} from 'conf/routes';
+import {Breadcrumbs, Link, Switch as MaterialSwitch} from '@material-ui/core/';
 
 const MainMenu = ({onClickChangeThemeButton}) => (
-  <nav>
-    <ul>
-      <li>
-        <Link to={home()}>Home</Link>
-      </li>
-      <li>
-        <Link to={spain()}>España</Link>
-      </li>
-      <li>
-        <Link to={logout()}>Cerrar sesión</Link>
-      </li>
-      <li>
-        <button onClick={onClickChangeThemeButton}>Cambiar tema</button>
-      </li>
-    </ul>
-  </nav>
+  <Breadcrumbs maxItems={3} aria-label="breadcrumb">
+    <Link label="Home" color="textPrimary" href={home()}>
+      Mundial
+    </Link>
+    <Link color="inherit" href={spain()}>
+      España
+    </Link>
+    <MaterialSwitch color="primary" onClick={onClickChangeThemeButton}>Cambiar Tema</MaterialSwitch>
+  </Breadcrumbs>
 );
 
 MainMenu.propTypes = {

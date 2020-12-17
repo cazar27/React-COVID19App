@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Container, Breadcrumbs, Link, Switch as MaterialSwitch} from '@material-ui/core/';
+import {Container} from '@material-ui/core/';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from 'Home';
 import Spain from 'Spain';
@@ -8,6 +8,7 @@ import {lightTheme, darkTheme} from 'styles/theme';
 import styled from 'styled-components';
 import 'App.css';
 import {home, spain} from 'conf/routes';
+import MainMenu from 'components/UI/MainMenu';
 
 const MainContainer = styled.div`
   background-color: ${(props) => props.theme.backgroundColor};
@@ -30,15 +31,7 @@ export default function App() {
       <MainContainer theme={currentTheme}>
         <Router>
           <Container maxWidth="sm">
-            <Breadcrumbs maxItems={3} aria-label="breadcrumb">
-              <Link label="Home" color="textPrimary" href={home()}>
-                Mundial
-              </Link>
-              <Link color="inherit" href={spain()}>
-                España
-              </Link>
-              <MaterialSwitch color="primary" onClick={handleChangeTheme}>Cambiar Tema</MaterialSwitch>
-            </Breadcrumbs>
+            <MainMenu onClickChangeThemeButton={handleChangeTheme} ></MainMenu>
             <Switch>
               <Route path={spain()}>
                 <Spain></Spain>
