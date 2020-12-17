@@ -1,9 +1,9 @@
-import DataList from './DataList';
+import DataList from '../UI/DataList';
 //imports from material-ui
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import useFetch from './hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 
 const Spain = function() {
   const {data, loading} = useFetch('https://enrichman.github.io/covid19/world/spain/data.json');

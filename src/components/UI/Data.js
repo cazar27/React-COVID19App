@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
-import ThemeContext from './themeContext';
+import ThemeContext from '../../contexts/themeContext';
 import styled from 'styled-components';
 
 const DataContainer = styled.div`

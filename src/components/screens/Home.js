@@ -1,7 +1,7 @@
-import DataList from './DataList';
+import DataList from '../UI/DataList';
 //imports from material-ui
 import {Container, Typography, Box} from '@material-ui/core/';
-import useFetch from './hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 
 const Home = function() {
 

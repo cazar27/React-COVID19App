@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {Container} from '@material-ui/core/';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Home from 'Home';
-import Spain from 'Spain';
-import ThemeContext from 'themeContext';
+import Home from 'components/screens/Home';
+import Spain from 'components/screens/Spain';
+import ThemeContext from 'contexts/themeContext';
 import {lightTheme, darkTheme} from 'styles/theme';
 import styled from 'styled-components';
 import 'App.css';
