@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
+import Typography from '@material-ui/core/Typography';
 import ThemeContext from './themeContext';
 import styled from 'styled-components';
 
@@ -14,35 +15,23 @@ const Number = styled.p`
   margin: 5px 0;
 `;
 
-const Label = styled.li`
-  font-size: 0.875rem;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 400;
-  line-height: 1.43;
-  color: ${props => props.theme.secondaryColor};
-  margin: 5px 0;
-`;
-
-const Data = ( {number, title } ) => {
-  
+const CustomDate = ( {lastupdate, title } ) => {
   const theme = useContext(ThemeContext);
 
   return (
-  
     <DataContainer theme={theme}>
-      <Label theme={theme}>
+      <Typography variant="body2" color="textSecondary">
         {title}
-      </Label>
+      </Typography>
       <Number>
-        {number}
+        {lastupdate}
       </Number>
     </DataContainer>
   )
 };
 
-Data.propTypes = {
-  number: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
+CustomDate.propTypes = {
+  title: PropTypes.string,
 }
 
-export default Data;
+export default CustomDate;

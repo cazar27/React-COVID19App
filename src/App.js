@@ -1,55 +1,55 @@
-import React, {useState, useEffect} from 'react';
-import DataList from './DataList';
-//imports from material-ui
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
-import './App.css';
+import React, { useState } from 'react';
+import {Container, Breadcrumbs, Link, Switch as MaterialSwitch} from '@material-ui/core/';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Home from 'Home';
+import Spain from 'Spain';
+import ThemeContext from 'themeContext';
+import {lightTheme, darkTheme} from 'styles/theme';
+import styled from 'styled-components';
+import 'App.css';
+import {home, spain} from 'conf/routes';
 
-const App = ({}) => {
+const MainContainer = styled.div`
+  background-color: ${(props) => props.theme.backgroundColor};
+  color:  ${(props) => props.theme.color};
+  min-height: 100vh;
+`;
 
-  const [loadding ,setLoading ] = useState(true);
-  const [death ,setDeath ] = useState(null);
-  const [confirmed ,setConfirmed ] = useState(null);
-  const [recovered ,setRecovered ] = useState(null);
-  const [last_update ,setLast_update ] = useState(null);
-  //const [countries ,setCountries ] = useState(null);
-
-  useEffect( () => {
-    async function fetchData() {
-      try {
-        const response = await fetch('https://enrichman.github.io/covid19/world/full.json');
-        const data = await response.json();
-        setLoading(false);
-        
-          setDeath(data.deaths);
-          setConfirmed(data.confirmed);
-          setRecovered(data.recovered);
-          setLast_update(data.last_update);
-          //setCountries(data.countries);
-        console.log(data);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-    fetchData();
-  }, []);
-
-  if(loadding) {
-    return (
-      <div> Cargando los datos actualizados</div>
-    )
-  } else {
-    return (
-      <Container maxWidth="sm">
-          <DataList
-            death= {death}
-            confirmed={confirmed}
-            recovered={recovered}
-            last_update={last_update}
-          />
-      </Container>
-    )
+export default function App() {
+  
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  
+  const handleChangeTheme = () => {
+    //setIsDarkTheme(!setIsDarkTheme);
+    setIsDarkTheme (oldValue => !oldValue );
   }
-};
 
-export default App;
+  const currentTheme = isDarkTheme ? darkTheme : lightTheme;
+  return (
+    <ThemeContext.Provider value={currentTheme}>
+      <MainContainer theme={currentTheme}>
+        <Router>
+          <Container maxWidth="sm">
+            <Breadcrumbs maxItems={3} aria-label="breadcrumb">
+              <Link label="Home" color="textPrimary" href={home()}>
+                Mundial
+              </Link>
+              <Link color="inherit" href={spain()}>
+                España
+              </Link>
+              <MaterialSwitch color="primary" onClick={handleChangeTheme}>Cambiar Tema</MaterialSwitch>
+            </Breadcrumbs>
+            <Switch>
+              <Route path={spain()}>
+                <Spain></Spain>
+              </Route>
+              <Route path={home()}>
+                <Home></Home>
+              </Route>
+            </Switch>
+          </Container>
+        </Router>
+      </MainContainer>
+    </ThemeContext.Provider>
+  );
+}
