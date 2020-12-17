@@ -3,7 +3,7 @@ import DataList from '../UI/DataList';
 import {Container, Typography, Box} from '@material-ui/core/';
 import useFetch from '../../hooks/useFetch';
 
-const Home = function() {
+const Home = () => {
 
   //const [countries ,setCountries ] = useState(null);
 

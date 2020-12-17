@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import useFetch from '../../hooks/useFetch';
 
-const Spain = function() {
+const Spain = () => {
   const {data, loading} = useFetch('https://enrichman.github.io/covid19/world/spain/data.json');
 
   if(loading) {
