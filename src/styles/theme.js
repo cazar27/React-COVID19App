@@ -4,7 +4,6 @@ export const lightTheme = {
   color: '#1d1d1d',
   secondaryColor: '#000000a8',
   colorTextPrimary: '#000000de',
-
 };
 
 export const darkTheme = {
@@ -12,5 +11,4 @@ export const darkTheme = {
   color: '#FAFAFA',
   secondaryColor : '#cfcfcf',
   colorTextPrimary: '#f3f3f3de',
-
 };
