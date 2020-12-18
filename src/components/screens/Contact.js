@@ -35,18 +35,17 @@ function reducer(state, action) {
 
 const Contact = () => { 
   
-  const [state, dispach] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
   const [file, setFile] = useState(null);
   const classes = useStyles();
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    const {fullname, email, message} = state;
-    console.log(`nombre: ${fullname} mail: ${email} mail: ${message} file: ${file}`);
+    console.log(`nombre: ${state.fullname} mail: ${state.email} mail: ${state.message} file: ${file}`);
   }
 
   function handleChangeInput(evt) {
-    dispach({
+    dispatch({
       type: MODIFY_INPUT,
       field: evt.target.name,
       value: evt.target.value
@@ -59,13 +58,13 @@ const Contact = () => {
 
   return (
     <Container maxWidth="sm">
-      <form className={classes.root} autoComplete="off">
-        <TextField id="fullname" value={state.fullname} onChange={handleChangeInput} label="Su nombre completo" color="secondary" />
-        <TextField id="email" value={state.email} onChange={handleChangeInput} label="Su email" color="secondary" />
-        <TextField id="message" value={state.message} onChange={handleChangeInput} label="Su Mensaje" color="secondary" />
+      <form className={classes.root} onSubmit={handleSubmit}>
+        <TextField id="fullname" value={state.fullname} onChange={handleChangeInput} label="Su nombre completo" color="primary" />
+        <TextField id="email" value={state.email} onChange={handleChangeInput} label="Su email" color="primary" />
+        <TextField id="message" value={state.message} onChange={handleChangeInput} label="Su Mensaje" color="primary" />
         <input type="file" onChange={handleChangeFile} />
         {file && <img  alt="profile" src={file} />}
-        <Button className={classes.button} type="submit" value="Enviar" onClick={handleSubmit} variant="contained" color="primary">
+        <Button className={classes.button} type="submit" value="Enviar" variant="contained" color="primary">
           Enviar
         </Button>
         

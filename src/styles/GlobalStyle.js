@@ -4,6 +4,18 @@ export default createGlobalStyle`
   html, body {
     height: 100%;
   }
+
+  a.link {
+    color: #909090;
+  }
+
+  a.link:active , a.link:hover,   {
+    color: #020075;
+  }
+
+  a.activeLink {
+    color: #3f51b5;
+  }
   
   body {
     margin: 0;

@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import ThemeContext from 'contexts/themeContext';
 import {lightTheme, darkTheme} from 'styles/theme';
-import styled from 'styled-components';
+import styled, {ThemeProvider} from 'styled-components';
 import GlobalStyle from 'styles/GlobalStyle';
 import 'App.css';
 import {home, spain, contact} from 'conf/routes';
@@ -26,17 +25,20 @@ export default function App() {
   }
   const currentTheme = isDarkTheme ? darkTheme : lightTheme;
   return (
-    <ThemeContext.Provider value={currentTheme}>
-      <MainContainer theme={currentTheme}>
-        <Router>
-          <MainMenu onClickChangeThemeButton={handleChangeTheme} theme={currentTheme} />
-          <Switch>
-            <Route exact path={home()} component={Home}/>
-            <Route exact path={spain()} component={Spain}/>
-            <Route exact path={contact()} component={Contact}/>
-          </Switch>
-        </Router>
-      </MainContainer>
-    </ThemeContext.Provider>
+    <>
+      <GlobalStyle />
+      <ThemeProvider theme={currentTheme}>
+        <MainContainer theme={currentTheme}>
+          <Router>
+            <MainMenu onClickChangeThemeButton={handleChangeTheme} theme={currentTheme} />
+            <Switch>
+              <Route exact path={home()} component={Home}/>
+              <Route exact path={spain()} component={Spain}/>
+              <Route exact path={contact()} component={Contact}/>
+            </Switch>
+          </Router>
+        </MainContainer>
+      </ThemeProvider>
+    </>
   );
 }
