@@ -10,13 +10,13 @@ const Spain = () => {
 
   if(loading) {
     return (
-      <div> Cargando los datos actualizados</div>
+      <Container maxWidth="sm"> Cargando los datos actualizados</Container>
     )
   } else {
     return (
       <Container maxWidth="sm">
         <Box my={2}>
-          <Typography variant="h5" component="h1" align="center" gutterBottom>
+          <Typography variant="h4" component="h1" align="center" gutterBottom>
             Informacion actualizada del COVID19
           </Typography>
           <Typography variant="h6" component="h2" align="center" gutterBottom>

@@ -9,13 +9,13 @@ const DataContainer = styled.div`
 `;
 
 const Number = styled.p`
-  font-size: 24px;
+  font-size: 1.8rem;
   font-weight: bold;
   margin: 5px 0;
 `;
 
 const Label = styled.li`
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
   line-height: 1.43;

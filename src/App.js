@@ -3,11 +3,10 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {lightTheme, darkTheme} from 'styles/theme';
 import styled, {ThemeProvider} from 'styled-components';
 import GlobalStyle from 'styles/GlobalStyle';
-import 'App.css';
 import {home, spain, contact} from 'conf/routes';
 import Home from 'components/screens/Home';
 import Spain from 'components/screens/Spain';
-import Contact from 'components/screens/ContactNew';
+import Contact from 'components/screens/Contact';
 import MainMenu from 'components/UI/MainMenu';
 
 const MainContainer = styled.div`

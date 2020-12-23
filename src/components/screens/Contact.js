@@ -1,5 +1,7 @@
-import React, {useState, useReducer} from 'react';
-import {makeStyles, TextField, Container, Button} from '@material-ui/core/';
+import React, {useState} from 'react';
+import {Formik} from 'formik';
+import styled from 'styled-components';
+import {makeStyles, TextField, Container, Button, FormHelperText } from '@material-ui/core/';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,63 +16,73 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MODIFY_INPUT = 'MODIFY_INPUT';
+const FormGroup= styled.div`
+  margin-bottom: 15px;
+`;
+const Label = styled.label`
+  display: block;
+  font-weight: bold;
+`;
 
 const initialState = {
   fullname: '',
   email: '',
   message: '',
-}
+  image: ''
+};
 
-function reducer(state, action) {
-  if(action.type === MODIFY_INPUT) {
-    return {
-      ...state,
-      [action.field]: action.value
-    }
-  } else {
-    return state;
+function validateForm(values) {
+  const errors = {};
+
+  if(!values.fullname) {
+    errors.fullname = 'El nombre es obligatorio';
   }
+  if(!values.email) {
+    errors.email = 'El email es obligatorio';
+  }
+
+  return errors;
 }
 
-const Contact = () => { 
-  
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const [file, setFile] = useState(null);
+const Contact =  () => {
   const classes = useStyles();
-
-  function handleSubmit(evt) {
-    evt.preventDefault();
-    console.log(`nombre: ${state.fullname} mail: ${state.email} mail: ${state.message} file: ${file}`);
+  const [image, setImage] = useState(null);
+  
+  function handleSubmit(values) {
+    console.log(values);
   }
 
-  function handleChangeInput(evt) {
-    dispatch({
-      type: MODIFY_INPUT,
-      field: evt.target.name,
-      value: evt.target.value
-    });
-  }
-
-  function handleChangeFile(evt) {
-    setFile(URL.createObjectURL(evt.target.files[0]));
+  function handleChangeFile(event) {
+    setImage(URL.createObjectURL(event.target.files[0]));
   }
 
   return (
     <Container maxWidth="sm">
-      <form className={classes.root} onSubmit={handleSubmit}>
-        <TextField id="fullname" value={state.fullname} onChange={handleChangeInput} label="Su nombre completo" color="primary" />
-        <TextField id="email" value={state.email} onChange={handleChangeInput} label="Su email" color="primary" />
-        <TextField id="message" value={state.message} onChange={handleChangeInput} label="Su Mensaje" color="primary" />
-        <input type="file" onChange={handleChangeFile} />
-        {file && <img  alt="profile" src={file} />}
-        <Button className={classes.button} type="submit" value="Enviar" variant="contained" color="primary">
-          Enviar
-        </Button>
-        
-      </form>
+      <h1> Formulario de contacto</h1>
+      <Formik 
+        initialValues={initialState} 
+        validate={validateForm}
+        onSubmit={handleSubmit}>
+        {({values, errors, touched, handleChange, handleSubmit}) => (
+          <form className={classes.root} onSubmit={handleSubmit}>
+            <TextField label="Nombre completo:" name="fullname" type="text" value={values.fullname} onChange={handleChange} />
+            {errors.fullname && touched.fullname && <FormHelperText color="error.dark">{errors.fullname}</FormHelperText>}
+            <TextField label="Email" name="email" type="text" value={values.email} onChange={handleChange} />
+            {errors.fullname && touched.fullname && <FormHelperText color="error.dark">{errors.email}</FormHelperText>}
+            <TextField label="Mensaje:" name="message" value={values.message} onChange={handleChange} />
+            <FormGroup>
+              <Label>Tu foto:</Label>
+              <input label="" type="file" onChange={handleChangeFile} />
+              {image && <img width="80%" src={image} alt="Imagen" />}
+            </FormGroup>
+            <Button className={classes.button} type="submit" value="Enviar" variant="contained" color="primary">
+              Enviar
+            </Button>
+          </form>
+        )}
+      </Formik>
     </Container>
-  );
+  )
 }
 
 export default Contact;
