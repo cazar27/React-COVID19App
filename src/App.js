@@ -7,7 +7,7 @@ import 'App.css';
 import {home, spain, contact} from 'conf/routes';
 import Home from 'components/screens/Home';
 import Spain from 'components/screens/Spain';
-import Contact from 'components/screens/Contact';
+import Contact from 'components/screens/ContactNew';
 import MainMenu from 'components/UI/MainMenu';
 
 const MainContainer = styled.div`
