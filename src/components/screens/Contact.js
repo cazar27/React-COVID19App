@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     width: '100%',
   },
+  submitMsg: {
+    opacity: 0,
+  }
 }));
 
 const FormGroup= styled.div`
@@ -50,6 +53,7 @@ const Contact =  () => {
   
   function handleSubmit(values) {
     console.log(values);
+
   }
 
   function handleChangeFile(event) {
@@ -64,7 +68,7 @@ const Contact =  () => {
         validate={validateForm}
         onSubmit={handleSubmit}>
         {({values, errors, touched, handleChange, handleSubmit}) => (
-          <form className={classes.root} onSubmit={handleSubmit}>
+          <form className={classes.root} onSubmit={handleSubmit} id="formContact">
             <TextField label="Nombre completo:" name="fullname" type="text" value={values.fullname} onChange={handleChange} />
             {errors.fullname && touched.fullname && <FormHelperText color="error.dark">{errors.fullname}</FormHelperText>}
             <TextField label="Email" name="email" type="text" value={values.email} onChange={handleChange} />
@@ -81,6 +85,7 @@ const Contact =  () => {
           </form>
         )}
       </Formik>
+      <p className={classes.submitMsg}>El formulario fue enviado</p>
     </Container>
   )
 }
