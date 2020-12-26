@@ -73,7 +73,7 @@ const Contact =  () => {
             <FormGroup>
               <Label>Tu foto:</Label>
               <input label="" type="file" onChange={handleChangeFile} />
-              {image && <img width="80%" src={image} alt="Imagen" />}
+              {image && <img width="50%" src={image} alt="Profile icon" />}
             </FormGroup>
             <Button className={classes.button} type="submit" value="Enviar" variant="contained" color="primary">
               Enviar

@@ -3,11 +3,12 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {lightTheme, darkTheme} from 'styles/theme';
 import styled, {ThemeProvider} from 'styled-components';
 import GlobalStyle from 'styles/GlobalStyle';
-import {home, spain, contact} from 'conf/routes';
+import {home, spain, contact,} from 'conf/routes';
 import Home from 'components/screens/Home';
 import Spain from 'components/screens/Spain';
 import Contact from 'components/screens/Contact';
 import MainMenu from 'components/UI/MainMenu';
+import Country from 'components/screens/Country';
 
 const MainContainer = styled.div`
   background-color: ${(props) => props.theme.backgroundColor};
@@ -34,6 +35,7 @@ export default function App() {
               <Route exact path={home()} component={Home}/>
               <Route exact path={spain()} component={Spain}/>
               <Route exact path={contact()} component={Contact}/>
+              <Route exact path="country/:country_id" component={Country}/>
             </Switch>
           </Router>
         </MainContainer>

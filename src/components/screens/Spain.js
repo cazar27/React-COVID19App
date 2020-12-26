@@ -1,5 +1,4 @@
 import DataList from '../UI/DataList';
-//imports from material-ui
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
