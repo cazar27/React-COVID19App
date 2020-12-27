@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {makeStyles, InputLabel, FormControl, Select, MenuItem} from '@material-ui/core/';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -17,8 +18,11 @@ const useStyles = makeStyles((theme) => ({
 const SelectCountries = ({countries}) => {
   const classes = useStyles();
   const [country, setCountry] = useState('');
+  let history = useHistory();
   const handleChange = (event) => {
     setCountry(event.target.value);
+
+    history.push('/country/'+event.target.value);
   };
 
   const listItems = countries.map((country) =>
