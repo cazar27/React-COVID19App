@@ -1,6 +1,6 @@
 // A custom theme for this app
 export const lightTheme = {
-  backgroundColor: '#f2f2f2',
+  backgroundColor: '#ffffff',
   color: '#1d1d1d',
   secondaryColor: '#000000a8',
   colorTextPrimary: '#000000de',

@@ -1,7 +1,6 @@
 import DataList from '../UI/DataList';
 import {Container, Typography, Box} from '@material-ui/core/';
-import useFetch from '../../hooks/useFetch';
-import SelectCountries from 'components/screens/SelectCountries';
+import useFetch from 'hooks/useFetch';
 
 const Home = () => {
   const {data, loading} = useFetch('https://enrichman.github.io/covid19/world/full.json');
@@ -26,7 +25,6 @@ const Home = () => {
           confirmed={data.confirmed}
           recovered={data.recovered}
         />
-        <SelectCountries countries={data.countries} />
       </Container>
     )
   }

@@ -6,12 +6,12 @@ import {makeStyles, TextField, Container, Button, FormHelperText } from '@materi
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
-      margin: theme.spacing(1),
+      margin: theme.spacing(0),
       width: '100%',
     },
   },
   button: {
-    margin: theme.spacing(1),
+    marginTop: theme.spacing(1),
     width: '100%',
   },
   submitMsg: {

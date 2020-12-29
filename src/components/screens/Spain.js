@@ -6,7 +6,7 @@ import useFetch from '../../hooks/useFetch';
 
 const Spain = () => {
   const {data, loading} = useFetch('https://enrichman.github.io/covid19/world/spain/data.json');
-
+  console.log(data)
   if(loading) {
     return (
       <Container maxWidth="sm"> Cargando los datos actualizados</Container>

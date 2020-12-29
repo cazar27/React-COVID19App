@@ -4,6 +4,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import useFetch from '../../hooks/useFetch';
 import {useParams} from 'react-router-dom';
+import Graph from 'components/screens/Graph';
 
 const Country = () => {
   
@@ -11,7 +12,7 @@ const Country = () => {
 
   if(country_id==null) country_id = 'spain';
   const {data, loading} = useFetch('https://enrichman.github.io/covid19/world/'+country_id+'/data.json');
-
+  console.log(data);
   if(loading) {
     return (
       <Container maxWidth="sm"> Seleccione un pais valido</Container>
@@ -27,6 +28,7 @@ const Country = () => {
             En {country_id}
           </Typography>
         </Box>
+        <Graph data={data} />
         <DataList
           death={data.deaths}
           confirmed={data.confirmed}

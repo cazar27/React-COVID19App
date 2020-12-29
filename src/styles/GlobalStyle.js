@@ -29,4 +29,8 @@ export default createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+
+  text[id*='tickLabels'] tspan {
+    font-size: 11px!important;
+  }
 `;

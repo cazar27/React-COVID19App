@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {makeStyles, InputLabel, FormControl, Select, MenuItem} from '@material-ui/core/';
-import { useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -33,15 +33,18 @@ const SelectCountries = ({countries}) => {
     </MenuItem>
   );
 
-  return (
-
-    <FormControl className={classes.formControl}>
-        <InputLabel id="select-countries" >Elige un pais:</InputLabel>
-        <Select className="form-control" onChange={handleChange}  value={country} labelId="select-countries" id="select-countries">
-          {listItems}
-        </Select>
-    </FormControl>
-  )
+  if(countries) {
+    return (
+    
+      <FormControl className={classes.formControl}>
+          <InputLabel id="select-countries" >Elige un pais:</InputLabel>
+          <Select className="form-control" onChange={handleChange}  value={country} labelId="select-countries" id="select-countries">
+            {listItems}
+          </Select>
+      </FormControl>
+    
+    )
+  }
 };
 
 export default SelectCountries;

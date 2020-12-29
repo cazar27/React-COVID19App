@@ -5,15 +5,17 @@ import styled from 'styled-components';
 const DataContainer = styled.div`
   color: ${props => props.theme.color};
   text-align: left;
+  padding: 10px;
+  display: inline;
 `;
 
-const Number = styled.p`
-  font-size: 1.8rem;
+const Number = styled.span`
+  font-size: 1.5rem;
   font-weight: bold;
   margin: 5px 0;
 `;
 
-const Label = styled.li`
+const Label = styled.span`
   font-size: 1rem;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
@@ -22,7 +24,7 @@ const Label = styled.li`
   margin: 5px 0;
 `;
 
-const Data = ( {number, title } ) => {
+const Data = ( {number, title, color } ) => {
 
   return (
   
