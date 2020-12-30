@@ -8,9 +8,9 @@ import Data from './Data';
 
 const deathColor = { color: '#f44336' }, confirmedColor = { color: '#f44336' }, recoveredColor= { color: '#f44336' };
 
-const DataList = ( {death,confirmed,recovered} ) => (
+const DataList = ( {death,confirmed,recovered,last_date} ) => (
   <Box my={4}>
-    <Data title="Muertos: " number={death} color={deathColor}/>
+    <Data title="Fallecidos: " number={death} color={deathColor}/>
     <Data title="Positivos: " number={confirmed} color={confirmedColor}/>
     <Data title="Recuperados:" number={recovered} color={recoveredColor}/>
   </Box>

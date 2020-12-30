@@ -9,17 +9,14 @@ const Spain = () => {
   console.log(data)
   if(loading) {
     return (
-      <Container maxWidth="sm"> Cargando los datos actualizados</Container>
+      <Container maxWidth="sm">Cargando los datos actualizados</Container>
     )
   } else {
     return (
       <Container maxWidth="sm">
         <Box my={2}>
-          <Typography variant="h4" component="h1" align="center" gutterBottom>
-            Informacion actualizada del COVID19
-          </Typography>
-          <Typography variant="h6" component="h2" align="center" gutterBottom>
-            En España
+          <Typography variant="h4" component="h1" gutterBottom>
+            Información actualizada del COVID19 en España
           </Typography>
         </Box>
         <DataList

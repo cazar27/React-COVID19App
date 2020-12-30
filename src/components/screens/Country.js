@@ -12,7 +12,6 @@ const Country = () => {
 
   if(country_id==null) country_id = 'spain';
   const {data, loading} = useFetch('https://enrichman.github.io/covid19/world/'+country_id+'/data.json');
-  console.log(data);
   if(loading) {
     return (
       <Container maxWidth="sm"> Seleccione un pais valido</Container>
@@ -21,10 +20,10 @@ const Country = () => {
     return (
       <Container maxWidth="sm">
         <Box my={2}>
-          <Typography variant="h4" component="h1" align="center" gutterBottom>
-            Informacion actualizada del COVID19
+          <Typography variant="h4" component="h1" gutterBottom>
+            Información actualizada del COVID19
           </Typography>
-          <Typography variant="h6" component="h2" align="center" gutterBottom>
+          <Typography variant="h6" component="h2" gutterBottom>
             En {country_id}
           </Typography>
         </Box>

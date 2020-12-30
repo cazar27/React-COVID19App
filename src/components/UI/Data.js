@@ -5,8 +5,7 @@ import styled from 'styled-components';
 const DataContainer = styled.div`
   color: ${props => props.theme.color};
   text-align: left;
-  padding: 10px;
-  display: inline;
+  padding: 10px 0;
 `;
 
 const Number = styled.span`
