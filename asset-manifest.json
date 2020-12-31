@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/React-COVID19App/static/js/main.2f5bf4f4.chunk.js",
-    "main.js.map": "/React-COVID19App/static/js/main.2f5bf4f4.chunk.js.map",
+    "main.js": "/React-COVID19App/static/js/main.8e03dbaf.chunk.js",
+    "main.js.map": "/React-COVID19App/static/js/main.8e03dbaf.chunk.js.map",
     "runtime-main.js": "/React-COVID19App/static/js/runtime-main.c5cf93e0.js",
     "runtime-main.js.map": "/React-COVID19App/static/js/runtime-main.c5cf93e0.js.map",
     "static/css/2.6f7fde24.chunk.css": "/React-COVID19App/static/css/2.6f7fde24.chunk.css",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.c5cf93e0.js",
     "static/css/2.6f7fde24.chunk.css",
     "static/js/2.2db5def3.chunk.js",
-    "static/js/main.2f5bf4f4.chunk.js"
+    "static/js/main.8e03dbaf.chunk.js"
   ]
 }
