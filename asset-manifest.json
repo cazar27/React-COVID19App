@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.js": "/static/js/main.2f5bf4f4.chunk.js",
-    "main.js.map": "/static/js/main.2f5bf4f4.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.eb422d58.js",
-    "runtime-main.js.map": "/static/js/runtime-main.eb422d58.js.map",
-    "static/css/2.c984a218.chunk.css": "/static/css/2.c984a218.chunk.css",
-    "static/js/2.cc165507.chunk.js": "/static/js/2.cc165507.chunk.js",
-    "static/js/2.cc165507.chunk.js.map": "/static/js/2.cc165507.chunk.js.map",
-    "static/js/3.4c9f8417.chunk.js": "/static/js/3.4c9f8417.chunk.js",
-    "static/js/3.4c9f8417.chunk.js.map": "/static/js/3.4c9f8417.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.c984a218.chunk.css.map": "/static/css/2.c984a218.chunk.css.map",
-    "static/js/2.cc165507.chunk.js.LICENSE.txt": "/static/js/2.cc165507.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
+    "main.js": "/React-COVID19App/static/js/main.2f5bf4f4.chunk.js",
+    "main.js.map": "/React-COVID19App/static/js/main.2f5bf4f4.chunk.js.map",
+    "runtime-main.js": "/React-COVID19App/static/js/runtime-main.c5cf93e0.js",
+    "runtime-main.js.map": "/React-COVID19App/static/js/runtime-main.c5cf93e0.js.map",
+    "static/css/2.6f7fde24.chunk.css": "/React-COVID19App/static/css/2.6f7fde24.chunk.css",
+    "static/js/2.2db5def3.chunk.js": "/React-COVID19App/static/js/2.2db5def3.chunk.js",
+    "static/js/2.2db5def3.chunk.js.map": "/React-COVID19App/static/js/2.2db5def3.chunk.js.map",
+    "static/js/3.4c9f8417.chunk.js": "/React-COVID19App/static/js/3.4c9f8417.chunk.js",
+    "static/js/3.4c9f8417.chunk.js.map": "/React-COVID19App/static/js/3.4c9f8417.chunk.js.map",
+    "index.html": "/React-COVID19App/index.html",
+    "static/css/2.6f7fde24.chunk.css.map": "/React-COVID19App/static/css/2.6f7fde24.chunk.css.map",
+    "static/js/2.2db5def3.chunk.js.LICENSE.txt": "/React-COVID19App/static/js/2.2db5def3.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/React-COVID19App/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.eb422d58.js",
-    "static/css/2.c984a218.chunk.css",
-    "static/js/2.cc165507.chunk.js",
+    "static/js/runtime-main.c5cf93e0.js",
+    "static/css/2.6f7fde24.chunk.css",
+    "static/js/2.2db5def3.chunk.js",
     "static/js/main.2f5bf4f4.chunk.js"
   ]
 }
