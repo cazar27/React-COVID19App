@@ -27,7 +27,7 @@ export default function App() {
       <GlobalStyle />
       <ThemeProvider theme={currentTheme}>
         <MainContainer theme={currentTheme}>
-          <Router basename='React-COVID19App'>
+          <Router basename='/React-COVID19App'>
             <MainMenu onClickChangeThemeButton={handleChangeTheme} theme={currentTheme} />
             <Switch>
               <Route exact path={home()} component={Home}/>
