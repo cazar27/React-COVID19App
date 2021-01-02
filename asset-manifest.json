@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.js": "/React-COVID19App/static/js/main.192149ca.chunk.js",
-    "main.js.map": "/React-COVID19App/static/js/main.192149ca.chunk.js.map",
-    "runtime-main.js": "/React-COVID19App/static/js/runtime-main.357fb6c1.js",
-    "runtime-main.js.map": "/React-COVID19App/static/js/runtime-main.357fb6c1.js.map",
-    "static/css/2.6f7fde24.chunk.css": "/React-COVID19App/static/css/2.6f7fde24.chunk.css",
-    "static/js/2.e9e53c6d.chunk.js": "/React-COVID19App/static/js/2.e9e53c6d.chunk.js",
-    "static/js/2.e9e53c6d.chunk.js.map": "/React-COVID19App/static/js/2.e9e53c6d.chunk.js.map",
-    "static/js/3.7694b7a6.chunk.js": "/React-COVID19App/static/js/3.7694b7a6.chunk.js",
-    "static/js/3.7694b7a6.chunk.js.map": "/React-COVID19App/static/js/3.7694b7a6.chunk.js.map",
-    "index.html": "/React-COVID19App/index.html",
-    "static/css/2.6f7fde24.chunk.css.map": "/React-COVID19App/static/css/2.6f7fde24.chunk.css.map",
-    "static/js/2.e9e53c6d.chunk.js.LICENSE.txt": "/React-COVID19App/static/js/2.e9e53c6d.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/React-COVID19App/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
+    "main.js": "https://cazar27.github.io/React-COVID19App/static/js/main.192149ca.chunk.js",
+    "main.js.map": "https://cazar27.github.io/React-COVID19App/static/js/main.192149ca.chunk.js.map",
+    "runtime-main.js": "https://cazar27.github.io/React-COVID19App/static/js/runtime-main.fff159e8.js",
+    "runtime-main.js.map": "https://cazar27.github.io/React-COVID19App/static/js/runtime-main.fff159e8.js.map",
+    "static/css/2.d48a3c4d.chunk.css": "https://cazar27.github.io/React-COVID19App/static/css/2.d48a3c4d.chunk.css",
+    "static/js/2.27ab575a.chunk.js": "https://cazar27.github.io/React-COVID19App/static/js/2.27ab575a.chunk.js",
+    "static/js/2.27ab575a.chunk.js.map": "https://cazar27.github.io/React-COVID19App/static/js/2.27ab575a.chunk.js.map",
+    "static/js/3.7694b7a6.chunk.js": "https://cazar27.github.io/React-COVID19App/static/js/3.7694b7a6.chunk.js",
+    "static/js/3.7694b7a6.chunk.js.map": "https://cazar27.github.io/React-COVID19App/static/js/3.7694b7a6.chunk.js.map",
+    "index.html": "https://cazar27.github.io/React-COVID19App/index.html",
+    "static/css/2.d48a3c4d.chunk.css.map": "https://cazar27.github.io/React-COVID19App/static/css/2.d48a3c4d.chunk.css.map",
+    "static/js/2.27ab575a.chunk.js.LICENSE.txt": "https://cazar27.github.io/React-COVID19App/static/js/2.27ab575a.chunk.js.LICENSE.txt",
+    "static/media/index.css": "https://cazar27.github.io/React-COVID19App/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.357fb6c1.js",
-    "static/css/2.6f7fde24.chunk.css",
-    "static/js/2.e9e53c6d.chunk.js",
+    "static/js/runtime-main.fff159e8.js",
+    "static/css/2.d48a3c4d.chunk.css",
+    "static/js/2.27ab575a.chunk.js",
     "static/js/main.192149ca.chunk.js"
   ]
 }
