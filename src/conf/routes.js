@@ -3,7 +3,7 @@ export function home() {
 }
 
 export function spain() {
-  return 'country/spain';
+  return '/country/spain';
 }
 
 export function contact() {

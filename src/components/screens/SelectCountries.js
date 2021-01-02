@@ -16,8 +16,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SelectCountries = ({countries}) => {
+
+  function compare(a, b) {
+    if (a.name<b.name) {
+      return -1;
+    }
+    if (a.name>b.name) {
+      return 1;
+    }
+    // a debe ser igual b
+    return 0;
+  }
+
   const classes = useStyles();
   const [country, setCountry] = useState('');
+  countries = countries.sort(compare);
+  console.log(countries);
   let history = useHistory();
   const handleChange = (event) => {
     setCountry(event.target.value);
@@ -38,7 +52,7 @@ const SelectCountries = ({countries}) => {
     
       <FormControl className={classes.formControl}>
           <InputLabel id="select-countries" >Elige un pais:</InputLabel>
-          <Select className="form-control" onChange={handleChange}  value={country} labelId="select-countries" id="select-countries">
+          <Select className="form-control" onChange={handleChange} value={country} labelId="select-countries" id="select-countries">
             {listItems}
           </Select>
       </FormControl>

@@ -5,7 +5,6 @@ import styled, {ThemeProvider} from 'styled-components';
 import GlobalStyle from 'styles/GlobalStyle';
 import {home, spain, contact} from 'conf/routes';
 import Home from 'components/screens/Home';
-import Spain from 'components/screens/Spain';
 import Contact from 'components/screens/Contact';
 import MainMenu from 'components/UI/MainMenu';
 import Country from 'components/screens/Country';
@@ -20,7 +19,6 @@ export default function App() {
 
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const handleChangeTheme = () => {
-    //setIsDarkTheme(!setIsDarkTheme);
     setIsDarkTheme (oldValue => !oldValue );
   }
   const currentTheme = isDarkTheme ? darkTheme : lightTheme;
@@ -33,7 +31,7 @@ export default function App() {
             <MainMenu onClickChangeThemeButton={handleChangeTheme} theme={currentTheme} />
             <Switch>
               <Route exact path={home()} component={Home}/>
-              <Route exact path={spain()} component={Spain}/>
+              <Route exact path={spain()} component={Country}/>
               <Route exact path={contact()} component={Contact}/>
               <Route path="/country/:country_id" component={Country}/>
             </Switch>

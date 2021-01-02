@@ -21,10 +21,7 @@ const Country = () => {
       <Container maxWidth="sm">
         <Box my={2}>
           <Typography variant="h4" component="h1" gutterBottom>
-            Información actualizada del COVID19
-          </Typography>
-          <Typography variant="h6" component="h2" gutterBottom>
-            En {country_id}
+            Información actualizada del COVID19 en {country_id}
           </Typography>
         </Box>
         <Graph data={data} />

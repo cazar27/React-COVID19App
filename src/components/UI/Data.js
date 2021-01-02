@@ -25,6 +25,8 @@ const Label = styled.span`
 
 const Data = ( {number, title, color } ) => {
 
+  const numberFormat = new Intl.NumberFormat('de-DE');
+
   return (
   
     <DataContainer>
@@ -32,7 +34,7 @@ const Data = ( {number, title, color } ) => {
         {title}
       </Label>
       <Number>
-        {number}
+        {numberFormat.format(number)}
       </Number>
     </DataContainer>
   )

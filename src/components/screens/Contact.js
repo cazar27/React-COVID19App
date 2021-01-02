@@ -62,7 +62,7 @@ const Contact =  () => {
 
   return (
     <Container maxWidth="sm">
-      <h1> Formulario de contacto</h1>
+      <h1>Contactar</h1>
       <Formik 
         initialValues={initialState} 
         validate={validateForm}
