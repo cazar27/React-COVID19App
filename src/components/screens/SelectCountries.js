@@ -31,7 +31,6 @@ const SelectCountries = ({countries}) => {
   const classes = useStyles();
   const [country, setCountry] = useState('');
   countries = countries.sort(compare);
-  console.log(countries);
   let history = useHistory();
   const handleChange = (event) => {
     setCountry(event.target.value);
