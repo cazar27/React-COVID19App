@@ -12,6 +12,7 @@ const Country = () => {
 
   if(country_id==null) country_id = 'spain';
   const {data, loading} = useFetch('https://enrichman.github.io/covid19/world/'+country_id+'/data.json');
+  
   if(loading) {
     return (
       <Container maxWidth="sm"> Seleccione un pais valido</Container>
