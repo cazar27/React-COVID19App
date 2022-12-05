@@ -16,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SelectCountries = ({countries}) => {
-
   function compare(a, b) {
     if (a.name<b.name) {
       return -1;
@@ -48,7 +47,7 @@ const SelectCountries = ({countries}) => {
 
   if(countries) {
     return (
-    
+      
       <FormControl className={classes.formControl}>
           <InputLabel id="select-countries" >Elige un pais:</InputLabel>
           <Select className="form-control" onChange={handleChange} value={country} labelId="select-countries" id="select-countries">

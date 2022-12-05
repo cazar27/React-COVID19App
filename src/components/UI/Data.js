@@ -9,7 +9,7 @@ const DataContainer = styled.div`
 `;
 
 const Number = styled.span`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   margin: 5px 0;
 `;
@@ -23,7 +23,7 @@ const Label = styled.span`
   margin: 5px 0;
 `;
 
-const Data = ( {number, title, color } ) => {
+const Data = ( {number, title } ) => {
 
   const numberFormat = new Intl.NumberFormat('de-DE');
 
